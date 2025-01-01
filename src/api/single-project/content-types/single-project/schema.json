@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "single_projects",
+  "info": {
+    "singularName": "single-project",
+    "pluralName": "single-projects",
+    "displayName": "SingleProject"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "CoverImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Images": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "Description": {
+      "type": "blocks"
+    },
+    "Link": {
+      "type": "string"
+    },
+    "category_project": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category-project.category-project",
+      "inversedBy": "single_projects"
+    }
+  }
+}
